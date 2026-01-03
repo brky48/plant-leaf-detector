@@ -14,25 +14,31 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 @st.cache_resource
 def load_resources():
     """
-    Downloads the pure .h5 model and forces float32 policy to kill float16 errors.
+    Reconstructs the InceptionV3 architecture and loads weights only.
+    This bypasses all graph serialization errors.
     """
-    # 1. TÜM POLİTİKALARI SIFIRLA (KRİTİK ADIM)
-    from tensorflow.keras import mixed_precision
-    mixed_precision.set_global_policy('float32')
-    tf.keras.backend.clear_session()
+    from tensorflow.keras.applications import InceptionV3
+    from tensorflow.keras import layers, models
     
+    # 1. Mimariyi Kodla Kur (Eğitim sırasındaki yapının birebir aynısı olmalı)
+    base_model = InceptionV3(weights=None, include_top=False, input_shape=(299, 299, 3))
+    x = base_model.output
+    x = layers.GlobalAveragePooling2D()(x)
+    x = layers.Dense(512, activation='relu')(x)
+    x = layers.Dropout(0.5)(x)
+    # 61 sınıfın olduğunu varsayıyorum (class_indices.json'a göre)
+    predictions = layers.Dense(61, activation='softmax')(x) 
+    
+    model = models.Model(inputs=base_model.input, outputs=predictions)
+    
+    # 2. Ağırlıkları Hugging Face'ten İndir ve Yükle
     REPO_ID = "berkay48/plant-leaf-detector" 
-    # Kaggle'da 'pure' olarak kaydettiğin dosyanın adını buraya yaz
-    FILENAME = "plant_disease_detector_pure.h5"
+    FILENAME = "plant_model_weights.weights.h5"
+    weights_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # Download from HF
-    model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
+    model.load_weights(weights_path)
     
-    # 2. MODELİ YÜKLE
-    # compile=False ve float32 politikası ile '2 input' hatasını imkansız hale getiriyoruz
-    model = tf.keras.models.load_model(model_path, compile=False)
-    
-    # Meta verileri yükle
+    # 3. Meta Verileri Yükle
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
