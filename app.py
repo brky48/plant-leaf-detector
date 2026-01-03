@@ -15,25 +15,25 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 # --- STEP 2: RESOURCE LOADING (CACHED) ---
 @st.cache_resource
 def load_resources():
-    """
-    Downloads the model weights and reconstructs architecture.
-    """
-    # 1. MİMARİYİ TEMİZDEN KUR
-    base_model = InceptionV3(weights=None, include_top=False, input_shape=(299, 299, 3))
+    # KRİTİK: Belleği temizle (2 input tensors hatasını önlemek için)
+    tf.keras.backend.clear_session()
+    
+    # 1. MİMARİYİ KUR 
+    # weights='imagenet' veriyoruz ki katman isimleri standart olsun ve senin .h5 dosyanla eşleşsin
+    base_model = InceptionV3(weights='imagenet', include_top=False, input_shape=(299, 299, 3))
     x = base_model.output
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.Dense(512, activation='relu')(x)
     x = layers.Dropout(0.5)(x)
-    # Sınıf sayını 61 olarak doğruluyoruz
     predictions = layers.Dense(61, activation='softmax')(x) 
     model = models.Model(inputs=base_model.input, outputs=predictions)
     
-    # 2. LEGACY DOSYADAN SADECE AĞIRLIKLARI ÇEK
+    # 2. LEGACY DOSYADAN AĞIRLIKLARI YÜKLE
     REPO_ID = "berkay48/plant-leaf-detector" 
     FILENAME = "plant_model_final_legacy.h5" 
     weights_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # by_name=True ile katman isimlerini eşleştirerek yükle
+    # İsimler artık 'imagenet' standartında olduğu için by_name=True tıkır tıkır çalışacak
     model.load_weights(weights_path, by_name=True, skip_mismatch=True)
     
     # 3. METADATALARI YÜKLE
@@ -88,12 +88,12 @@ with tab1:
         st.image(image, caption='User Upload', use_container_width=True)
         
         if st.button(t["btn_predict"]):
-            # Resize for InceptionV3
+            # InceptionV3 için 299x299 şart
             img = image.resize((299, 299))
             img_array = np.array(img)
             img_array = np.expand_dims(img_array, axis=0)
             
-            # KRİTİK DÜZELTME: Manuel bölme yerine InceptionV3'ün beklediği preprocess fonksiyonu
+            # KRİTİK: Güven skorunu düzelten preprocess fonksiyonu
             img_array = preprocess_input(img_array.astype(np.float32))
             
             with st.spinner('AI is processing...' if lang_code == "en" else 'Yapay zeka inceliyor...'):
@@ -101,7 +101,7 @@ with tab1:
                 confidence = np.max(preds)
                 predicted_label = labels[np.argmax(preds)]
 
-            # TEST İÇİN: Eşik değerini 0.40'a düşürdük (skorların yükselip yükselmediğini görmek için)
+            # Reddedilme sınırını test için 0.40 yaptık
             if confidence < 0.40:
                 st.warning(t["confidence_err"])
                 st.info(f"System Confidence: {confidence:.4f}")
@@ -130,16 +130,16 @@ with tab2:
     st.divider()
     st.subheader(t["csv_title"])
     
-    # Tablo hatasını gidermek için matplotlib yüklü değilse renklendirmeyi atla
+    # Matplotlib hatasını önlemek için try-except
     try:
         st.dataframe(
             performance_df.style.background_gradient(cmap='YlGn', subset=['f1-score']), 
             use_container_width=True
         )
-    except Exception:
+    except:
         st.dataframe(performance_df, use_container_width=True)
 
 # --- FOOTER ---
 st.sidebar.markdown("---")
-st.sidebar.write("👤 **Developer:** Berkay")
+st.sidebar.write("👤 **Developer:** Berkay Korkut")
 st.sidebar.caption("MIS Graduation Project - 2026")
