@@ -101,8 +101,8 @@ with tab1:
                 confidence = np.max(preds)
                 predicted_label = labels[np.argmax(preds)]
 
-            # Reddedilme sınırını test için 0.40 yaptık
-            if confidence < 0.40:
+            # Reddedilme sınırını test için 0.70 yaptık
+            if confidence < 0.10:
                 st.warning(t["confidence_err"])
                 st.info(f"System Confidence: {confidence:.4f}")
             else:
