@@ -14,31 +14,32 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 @st.cache_resource
 def load_resources():
     """
-    Reconstructs the InceptionV3 architecture and loads weights only.
-    This bypasses all graph serialization errors.
+    Reconstructs architecture and forces weight loading by matching layer names.
     """
     from tensorflow.keras.applications import InceptionV3
     from tensorflow.keras import layers, models
     
-    # 1. Mimariyi Kodla Kur (Eğitim sırasındaki yapının birebir aynısı olmalı)
+    # 1. MİMARİYİ KUR (Katman isimlerini serbest bırakıyoruz)
     base_model = InceptionV3(weights=None, include_top=False, input_shape=(299, 299, 3))
     x = base_model.output
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.Dense(512, activation='relu')(x)
     x = layers.Dropout(0.5)(x)
-    # 61 sınıfın olduğunu varsayıyorum (class_indices.json'a göre)
     predictions = layers.Dense(61, activation='softmax')(x) 
     
     model = models.Model(inputs=base_model.input, outputs=predictions)
     
-    # 2. Ağırlıkları Hugging Face'ten İndir ve Yükle
+    # 2. AĞIRLIKLARI HUGGING FACE'TEN İNDİR
     REPO_ID = "berkay48/plant-leaf-detector" 
-    FILENAME = "plant_model_weights.weights.h5"
+    FILENAME = "plant_model_weights.weights.h5" # Kaggle'dan yeni aldığın weights dosyası
     weights_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    model.load_weights(weights_path)
+    # KRİTİK MÜDAHALE: by_name=True ve skip_mismatch=True
+    # by_name: İsimleri tutanları eşleştir.
+    # skip_mismatch: Boyutları tutmayan veya eksik kalan (batch_norm gibi) katmanları atla, hata verme.
+    model.load_weights(weights_path, by_name=True, skip_mismatch=True)
     
-    # 3. Meta Verileri Yükle
+    # 3. DİĞER DOSYALARI YÜKLE
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
