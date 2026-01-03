@@ -1,0 +1,856 @@
+{
+  "Apple__Black_Rot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Prune out dead or cankered limbs and remove mummified fruits. Apply fungicides like captan or sulfur during the growing season.",
+      "irrigation": "Water at the base early in the morning; avoid wetting the foliage to prevent spore germination.",
+      "fertilizer": "Maintain balanced nutrition; avoid excessive nitrogen which can encourage succulent growth prone to infection."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Ölü veya kanserli dalları budayın ve mumyalanmış meyveleri uzaklaştırın. Büyüme mevsiminde kaptan veya kükürt bazlı fungisitler uygulayın.",
+      "irrigation": "Sabah erken saatlerde dipten sulayın; spor çimlenmesini önlemek için yaprakları ıslatmaktan kaçının.",
+      "fertilizer": "Dengeli beslemeyi koruyun; enfeksiyona yatkın sukulent büyümesini teşvik edebilecek aşırı azottan kaçının."
+    }
+  },
+  "Apple__Cedar_Rust": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Remove nearby juniper plants if possible. Apply preventative fungicides such as myclobutanil at the pink bud stage.",
+      "irrigation": "Use drip irrigation to keep the leaves dry, as moisture triggers the release of spores from galls.",
+      "fertilizer": "Focus on potassium-rich fertilizers to strengthen cell walls and improve overall disease resistance."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Mümkünse yakındaki ardıç bitkilerini uzaklaştırın. Pembe tomurcuk aşamasında miklobutanil gibi önleyici fungisitler uygulayın.",
+      "irrigation": "Yaprakları kuru tutmak için damla sulama kullanın; nem, gallerden sporların salınmasını tetikler.",
+      "fertilizer": "Hücre duvarlarını güçlendirmek ve genel hastalık direncini artırmak için potasyum açısından zengin gübrelere odaklanın."
+    }
+  },
+  "Apple__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Maintain annual pruning for air circulation and sunlight penetration.",
+      "irrigation": "Provide consistent moisture (about 1 inch per week) during the growing season, focusing on the root zone.",
+      "fertilizer": "Apply a balanced organic compost or a slow-release fertilizer in early spring to sustain vitality."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Hava sirkülasyonu ve güneş ışığı alımı için yıllık budama yapmaya devam edin.",
+      "irrigation": "Büyüme mevsimi boyunca kök bölgesine odaklanarak tutarlı nem (haftada yaklaşık 2.5 cm su) sağlayın.",
+      "fertilizer": "Canlılığı sürdürmek için erken baharda dengeli organik kompost veya yavaş salınımlı gübre uygulayın."
+    }
+  },
+  "Apple__Scab": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Rake and destroy fallen leaves in autumn. Apply fungicides containing copper or mancozeb at green tip and petal fall stages.",
+      "irrigation": "Ensure good drainage and avoid late-evening watering that keeps foliage wet overnight.",
+      "fertilizer": "Avoid high-nitrogen fertilizers in spring, as rapid tender growth is highly susceptible to scab spores."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Sonbaharda dökülen yaprakları tırmıklayın ve imha edin. Yeşil uç ve taç yaprak dökümü aşamalarında bakır veya mankozeb içeren fungisitler uygulayın.",
+      "irrigation": "İyi drenaj sağlayın ve yaprakların gece boyunca ıslak kalmasına neden olan geç akşam sulamalarından kaçının.",
+      "fertilizer": "Hızlı ve körpe büyüme karaleke sporlarına karşı çok hassas olduğundan, baharda yüksek azotlu gübrelerden kaçının."
+    }
+  },
+  "Bitter_Gourd__Downey_Mildew": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Improve air circulation through trellising. Apply fungicides such as chlorothalonil or mancozeb when humid conditions prevail.",
+      "irrigation": "Use drip irrigation exclusively. Avoid overhead watering to limit the humidity within the canopy.",
+      "fertilizer": "Ensure adequate phosphorus levels to help the plant recover and support fruit development under stress."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Askıya alma (trellising) yöntemiyle hava sirkülasyonunu artırın. Nemli koşullar hakim olduğunda klorotalonil veya mankozeb gibi fungisitler uygulayın.",
+      "irrigation": "Sadece damla sulama kullanın. Bitki örtüsü içindeki nemi sınırlamak için üstten sulamadan kaçının.",
+      "fertilizer": "Bitkinin toparlanmasına yardımcı olmak ve stres altında meyve gelişimini desteklemek için yeterli fosfor seviyelerini sağlayın."
+    }
+  },
+  "Bitter_Gourd__Fusarium_Wilt": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Drench the soil with carbendazim. Rotate crops with non-cucurbit species for at least 3 years to reduce soil inoculum.",
+      "irrigation": "Avoid overwatering or waterlogged soil, which creates an ideal environment for Fusarium pathogens.",
+      "fertilizer": "Use nitrate-based nitrogen instead of ammonium-based, as ammonium can lower soil pH and encourage the fungus."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Toprağı karbendazim ile ilaçlayın. Topraktaki inokulumu azaltmak için kabakgil olmayan türlerle en az 3 yıl ürün rotasyonu yapın.",
+      "irrigation": "Fusarium patojenleri için ideal bir ortam yaratan aşırı sulamadan veya suyla dolmuş topraktan kaçının.",
+      "fertilizer": "Amonyum bazlı yerine nitrat bazlı azot kullanın; çünkü amonyum toprak pH'ını düşürebilir ve mantarı teşvik edebilir."
+    }
+  },
+  "Bitter_Gourd__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Use mulch to keep fruit off the soil and prevent soil-borne diseases.",
+      "irrigation": "Water regularly to keep soil moist, especially during flowering and fruit setting stages.",
+      "fertilizer": "Feed with high-potassium fertilizer once fruit starts to develop to enhance yield and flavor."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Meyveyi topraktan uzak tutmak ve toprak kaynaklı hastalıkları önlemek için malç kullanın.",
+      "irrigation": "Özellikle çiçeklenme ve meyve tutumu aşamalarında toprağı nemli tutmak için düzenli sulayın.",
+      "fertilizer": "Verimi ve lezzeti artırmak için meyve gelişmeye başladığında yüksek potasyumlu gübre ile besleyin."
+    }
+  },
+  "Bitter_Gourd__Mosaic_Virus": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No chemical cure. Control aphid populations (the vectors) with neem oil and immediately remove/burn infected plants.",
+      "irrigation": "Maintain steady irrigation to reduce plant stress, which can worsen viral symptoms.",
+      "fertilizer": "Apply balanced micronutrients (Zinc, Magnesium) to boost the plant's immune system against viral replication."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Kimyasal tedavisi yoktur. Vektör olan afid (yaprak biti) popülasyonlarını neem yağı ile kontrol edin ve enfekte bitkileri hemen söküp yakın.",
+      "irrigation": "Viral semptomları kötüleştirebilen bitki stresini azaltmak için düzenli sulamayı sürdürün.",
+      "fertilizer": "Bitkinin viral replikasyona karşı bağışıklık sistemini güçlendirmek için dengeli mikro besinler (Çinko, Magnezyum) uygulayın."
+    }
+  },
+  "Bottle_Gourd__Anthracnose": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Remove infected crop debris. Spray with fungicides like chlorothalonil or benomyl at 7-10 day intervals during rainy weather.",
+      "irrigation": "Avoid working in the garden when plants are wet to prevent spreading spores by touch or tools.",
+      "fertilizer": "Ensure sufficient Calcium levels to strengthen the rinds of the gourds against fungal penetration."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Enfekte ürün artıklarını uzaklaştırın. Yağmurlu havalarda 7-10 gün aralıklarla klorotalonil veya benomil gibi fungisitler püskürtün.",
+      "irrigation": "Sporların temas veya aletlerle yayılmasını önlemek için bitkiler ıslakken bahçede çalışmaktan kaçının.",
+      "fertilizer": "Kabakların kabuklarını mantar girişine karşı güçlendirmek için yeterli Kalsiyum seviyelerini sağlayın."
+    }
+  },
+  "Bottle_Gourd__Downey_Mildew": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply systemic fungicides like metalaxyl. Space plants properly to ensure maximum air flow between vines.",
+      "irrigation": "Water only in the morning so that any water on the leaves evaporates quickly during the day.",
+      "fertilizer": "Avoid late-season heavy nitrogen applications which produce young leaves that are highly susceptible to mildew."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Metalaksil gibi sistemik fungisitler uygulayın. Asmalar arasında maksimum hava akışını sağlamak için bitkileri uygun aralıklarla dikin.",
+      "irrigation": "Sadece sabahları sulayın, böylece yapraklardaki su gün boyunca hızla buharlaşır.",
+      "fertilizer": "Mildiyöye karşı çok hassas olan genç yapraklar üreten sezon sonu ağır azot uygulamalarından kaçının."
+    }
+  },
+  "Bottle_Gourd__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Periodically check the underside of leaves for pests and ensure the trellis is sturdy.",
+      "irrigation": "Maintain consistent soil moisture; avoid dry spells which can cause fruit bitterness or cracking.",
+      "fertilizer": "Apply an organic mulch to provide slow-release nutrients and suppress weeds around the base."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Yaprakların alt kısımlarını periyodik olarak zararlılar için kontrol edin ve askı sisteminin sağlam olduğundan emin olun.",
+      "irrigation": "Tutarlı toprak nemini koruyun; meyvede acılığa veya çatlamaya neden olabilen kurak dönemlerden kaçının.",
+      "fertilizer": "Yavaş salınımlı besin sağlamak ve kök çevresindeki yabancı otları baskılamak için organik malç uygulayın."
+    }
+  },
+  "Cauliflower__Black_Rot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Remove and destroy infected plants immediately. Use copper-based bactericides and practice a 3-year crop rotation.",
+      "irrigation": "Avoid overhead watering; moisture on leaves allows bacteria to enter through hydathodes (leaf margins).",
+      "fertilizer": "Avoid excessive nitrogen, as it can lead to rapid, soft growth that is more susceptible to bacterial invasion."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Enfekte bitkileri hemen sökün ve imha edin. Bakır bazlı bakterisitler kullanın ve 3 yıllık ürün rotasyonu uygulayın.",
+      "irrigation": "Üstten sulamadan kaçının; yapraklardaki nem, bakterilerin hidatodlardan (yaprak kenarları) girmesine olanak tanır.",
+      "fertilizer": "Bakteriyel istilaya daha duyarlı, hızlı ve yumuşak büyümeye yol açabileceği için aşırı azottan kaçının."
+    }
+  },
+  "Cauliflower__Downey_Mildew": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Improve spacing for air circulation. Apply fungicides like mancozeb or metalaxyl at the first sign of yellow spots.",
+      "irrigation": "Water early in the day so foliage dries before sunset. High humidity is the primary driver of this fungus.",
+      "fertilizer": "Ensure adequate Potassium and Boron; healthy cell structures are better at resisting fungal penetration."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Hava sirkülasyonu için bitki aralıklarını artırın. Sarı lekelerin ilk belirtisinde mankozeb veya metalaksil gibi fungisitler uygulayın.",
+      "irrigation": "Gün erken saatlerde sulama yapın ki yapraklar gün batımından önce kurusun. Yüksek nem bu mantarın ana tetikleyicisidir.",
+      "fertilizer": "Yeterli Potasyum ve Bor sağladığınızdan emin olun; sağlıklı hücre yapıları mantar girişine karşı daha dirençlidir."
+    }
+  },
+  "Cauliflower__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Consider 'blanching' (tying leaves over the head) to keep the curd white and protected from sun.",
+      "irrigation": "Keep soil uniformly moist. Water stress can cause 'buttoning' (development of small, premature heads).",
+      "fertilizer": "Apply a Boron-enriched fertilizer, as cauliflower is highly sensitive to Boron deficiency which causes hollow stems."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Çiçek kısmının beyaz kalması ve güneşten korunması için 'ağartma' (yaprakları başın üzerine bağlama) yapmayı düşünün.",
+      "irrigation": "Toprağı tekdüzey nemli tutun. Su stresi 'düğmelenmeye' (küçük, erken baş oluşumu) neden olabilir.",
+      "fertilizer": "Karnabahar, içi boş gövdeye neden olan Bor eksikliğine çok duyarlı olduğundan Bor ile zenginleştirilmiş gübre uygulayın."
+    }
+  },
+  "Cherry_including_sour__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "Perform dormant pruning in winter to open up the canopy for light and air. Monitor for aphids in spring.",
+      "irrigation": "Provide deep watering during dry summer months to support fruit sizing, but ensure good soil drainage.",
+      "fertilizer": "Apply a balanced fertilizer (e.g., 10-10-10) in early spring before new growth starts."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Işık ve hava için kanopiyi açmak amacıyla kışın durgun budama yapın. Baharda afidlere (yaprak biti) karşı gözlem yapın.",
+      "irrigation": "Meyve büyüklüğünü desteklemek için kurak yaz aylarında derin sulama yapın, ancak iyi toprak drenajı sağladığınızdan emin olun.",
+      "fertilizer": "Yeni büyüme başlamadan önce erken baharda dengeli bir gübre (örneğin 10-10-10) uygulayın."
+    }
+  },
+  "Cherry_including_sour__Powdery_Mildew": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Prune to increase sunlight penetration. Use sulfur-based sprays or horticultural oils carefully when temperatures are below 30°C.",
+      "irrigation": "Avoid wetting the foliage. Use drip lines or soaker hoses to keep the humidity low around the tree canopy.",
+      "fertilizer": "Reduce nitrogen applications; succulent new growth is the most susceptible to powdery mildew infection."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Güneş ışığı girişini artırmak için budama yapın. Sıcaklık 30°C'nin altındayken kükürt bazlı spreyler veya bahçe yağlarını dikkatlice kullanın.",
+      "irrigation": "Yaprakları ıslatmaktan kaçının. Ağaç kanopisi etrafındaki nemi düşük tutmak için damlama hatları veya sızdırma hortumları kullanın.",
+      "fertilizer": "Azot uygulamasını azaltın; taze ve sukulent yeni büyüme, külleme enfeksiyonuna en duyarlı kısımdır."
+    }
+  },
+  "Corn_(maize)__Cercospora_Leaf_Spot_Gray_Leaf_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Rotate crops with soybeans or other non-grass species. Apply strobilurin or triazole fungicides if lesions reach the ear leaf.",
+      "irrigation": "Manage irrigation to reduce the period of leaf wetness; avoid evening irrigation.",
+      "fertilizer": "Ensure optimal Nitrogen and Potassium levels to help the plant stay green longer and fill kernels despite leaf damage."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Ürünleri soya fasulyesi veya diğer otsu olmayan türlerle rotasyona sokun. Lezyonlar koçan yaprağına ulaşırsa strobilurin veya triazol fungisitler uygulayın.",
+      "irrigation": "Yaprak ıslaklık süresini azaltmak için sulamayı yönetin; akşam sulamasından kaçının.",
+      "fertilizer": "Yaprak hasarına rağmen bitkinin daha uzun süre yeşil kalmasına ve taneleri doldurmasına yardımcı olmak için optimal Azot ve Potasyum seviyelerini sağlayın."
+    }
+  },
+  "Corn_(maize)__Common_Rust": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Most hybrids are resistant; if infection is severe, apply fungicides early in the season. Destroy infected crop residue.",
+      "irrigation": "Avoid overhead sprinklers if possible, as rust spores spread rapidly through water splashes and wind.",
+      "fertilizer": "Maintain balanced NPK. Excessive phosphorus can sometimes interfere with other nutrients, so follow soil test results."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Çoğu hibrit dirençlidir; enfeksiyon şiddetliyse sezon başında fungisit uygulayın. Enfekte ürün artıklarını imha edin.",
+      "irrigation": "Mümkünse üstten fıskiyeden kaçının, çünkü pas sporları su sıçramaları ve rüzgar yoluyla hızla yayılır.",
+      "fertilizer": "Dengeli NPK sağlayın. Aşırı fosfor bazen diğer besinlerle etkileşime girebilir, bu nedenle toprak testi sonuçlarını izleyin."
+    }
+  },
+  "Corn_(maize)__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Keep the field weed-free to prevent competition for nutrients and water.",
+      "irrigation": "Critical watering stages are silking and tasseling; ensure the plant does not experience drought during these phases.",
+      "fertilizer": "Corn is a heavy feeder; apply nitrogen in split doses (at planting and side-dressed later) for maximum yield."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Besin ve su rekabetini önlemek için tarlayı yabancı otlardan temiz tutun.",
+      "irrigation": "Kritik sulama aşamaları ipeklenme ve püskül çıkarma dönemleridir; bitkinin bu aşamalarda kuraklık çekmediğinden emin olun.",
+      "fertilizer": "Mısır çok besin tüketen bir bitkidir; maksimum verim için azotu bölünmüş dozlar halinde (dikimde ve daha sonra üstten) uygulayın."
+    }
+  },
+  "Corn_(maize)__Northern_Leaf_Blight": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Use resistant hybrids for future planting. Apply fungicides at the first sign of 'cigar-shaped' lesions during high humidity.",
+      "irrigation": "Avoid irrigation methods that keep leaves wet for more than 12 hours, as this encourages spore germination.",
+      "fertilizer": "Correct any Zinc deficiencies, as stressed plants are more susceptible to blight pathogens."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Gelecek dikimler için dirençli hibritler kullanın. Yüksek nemli dönemlerde 'puro şeklindeki' lezyonların ilk belirtisinde fungisit uygulayın.",
+      "irrigation": "Yaprakları 12 saatten fazla ıslak tutan sulama yöntemlerinden kaçının, çünkü bu durum spor çimlenmesini teşvik eder.",
+      "fertilizer": "Stresli bitkiler yanıklık patojenlerine karşı daha duyarlı olduğundan, varsa Çinko eksikliklerini giderin."
+    }
+  },
+  "Cucumber__Anthracnose": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply fungicides like chlorothalonil or benomyl. Remove and burn infected crop debris after harvest to prevent winter carryover.",
+      "irrigation": "Avoid overhead irrigation; water splashing is the primary way spores spread. Use drip systems at the base.",
+      "fertilizer": "Maintain balanced NPK; ensure adequate potassium levels to help the plant's vascular system resist fungal blockages."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Klorotalonil veya benomil gibi fungisitler uygulayın. Kışın hayatta kalmasını önlemek için hasattan sonra enfekte ürün artıklarını söküp yakın.",
+      "irrigation": "Üstten sulamadan kaçının; su sıçraması sporların yayılmasının ana yoludur. Taban kısmında damlama sistemleri kullanın.",
+      "fertilizer": "Dengeli NPK sağlayın; bitkinin damar sisteminin mantar tıkanıklıklarına direnmesine yardımcı olmak için yeterli potasyum seviyelerini sağlayın."
+    }
+  },
+  "Cucumber__Downey_Mildew": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Use systemic fungicides such as metalaxyl or mancozeb. Increase plant spacing to lower humidity within the leaf canopy.",
+      "irrigation": "Water only in the morning so the sun can dry the leaves quickly. High leaf wetness duration is critical for this pathogen.",
+      "fertilizer": "Avoid excess nitrogen late in the season, as it promotes tender new growth which is highly susceptible to mildew."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Metalaksil veya mankozeb gibi sistemik fungisitler kullanın. Yaprak örtüsü içindeki nemi düşürmek için bitki aralıklarını artırın.",
+      "irrigation": "Sadece sabahları sulayın, böylece güneş yaprakları hızla kurutabilir. Yaprak ıslaklık süresinin uzunluğu bu patojen için kritiktir.",
+      "fertilizer": "Sezon sonunda aşırı azottan kaçının, çünkü bu durum mildiyöye karşı çok hassas olan taze yeni büyümeyi teşvik eder."
+    }
+  },
+  "Cucumber__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Use trellising to keep fruits off the ground, improving air circulation and fruit shape.",
+      "irrigation": "Keep soil consistently moist. Fluctuations in soil moisture can lead to bitter-tasting cucumbers.",
+      "fertilizer": "Apply a balanced liquid fertilizer every 2 weeks once flowering begins to support rapid fruit development."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Meyveleri topraktan uzak tutmak, hava sirkülasyonunu ve meyve şeklini iyileştirmek için askı sistemi kullanın.",
+      "irrigation": "Toprağı sürekli nemli tutun. Toprak nemindeki dalgalanmalar salatalıkların acılaşmasına neden olabilir.",
+      "fertilizer": "Hızlı meyve gelişimini desteklemek için çiçeklenme başladığında her 2 haftada bir dengeli sıvı gübre uygulayın."
+    }
+  },
+  "Eggplant__Begomovirus": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No chemical cure for the virus. Control whiteflies (the vector) using yellow sticky traps and neem oil. Remove infected plants immediately.",
+      "irrigation": "Maintain regular irrigation to prevent water stress, which can accelerate the decline of virus-infected plants.",
+      "fertilizer": "Apply foliar micronutrients (Zinc and Boron) to help the plant cope with the physiological stress caused by the virus."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Virüsün kimyasal tedavisi yoktur. Sarı yapışkan tuzaklar ve neem yağı kullanarak beyaz sinekleri (vektör) kontrol edin. Enfekte bitkileri derhal uzaklaştırın.",
+      "irrigation": "Virüs bulaşmış bitkilerin çöküşünü hızlandırabilen su stresini önlemek için düzenli sulamayı sürdürün.",
+      "fertilizer": "Bitkinin virüsün neden olduğu fizyolojik stresle başa çıkmasına yardımcı olmak için yapraktan mikro besinler (Çinko ve Bor) uygulayın."
+    }
+  },
+  "Eggplant__Cercospora": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply copper-based fungicides or mancozeb. Remove lower infected leaves to prevent the fungus from climbing up the plant.",
+      "irrigation": "Use mulch to prevent soil splashing onto lower leaves and keep the garden area well-drained.",
+      "fertilizer": "Ensure adequate nitrogen for leaf recovery, but balance with potassium to maintain fruit quality and skin thickness."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Bakır bazlı fungisitler veya mankozeb uygulayın. Mantarın bitkinin üst kısımlarına tırmanmasını önlemek için alt kısımdaki enfekte yaprakları sökün.",
+      "irrigation": "Toprağın alt yapraklara sıçramasını önlemek için malç kullanın ve bahçe alanının iyi drenajlı olduğundan emin olun.",
+      "fertilizer": "Yaprakların toparlanması için yeterli azot sağlayın, ancak meyve kalitesini ve kabuk kalınlığını korumak için potasyum ile dengeleyin."
+    }
+  },
+  "Eggplant__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Stake plants early to support heavy fruit and prevent stem breakage during wind.",
+      "irrigation": "Provide deep watering (at least 1-2 inches per week). Eggplants are heavy water users, especially during fruit set.",
+      "fertilizer": "Mix well-rotted manure or compost into the soil before planting. Side-dress with a balanced NPK fertilizer when first fruits appear."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Ağır meyveleri desteklemek ve rüzgarda gövde kırılmasını önlemek için bitkileri erkenden destek çubuklarına bağlayın.",
+      "irrigation": "Derin sulama sağlayın (haftada en az 2.5-5 cm). Patlıcanlar, özellikle meyve tutumu sırasında çok su tüketirler.",
+      "fertilizer": "Dikimden önce toprağa iyi yanmış çiftlik gübresi veya kompost karıştırın. İlk meyveler göründüğünde dengeli bir NPK gübresi ile kök çevresini destekleyin."
+    }
+  },
+  "Eggplant__Verticillium_Wilt": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No effective chemical control once infected. Practice long-term crop rotation (4+ years) and use soil solarization before planting.",
+      "irrigation": "Avoid excessive watering as the fungus thrives in cool, wet soils. Ensure perfect drainage to limit fungal movement.",
+      "fertilizer": "Avoid high-nitrogen fertilizers which can favor the fungus; use ammonium sulfate or organic matter to slightly acidify soil if needed."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Enfeksiyon oluştuktan sonra etkili bir kimyasal kontrolü yoktur. Uzun süreli ürün rotasyonu (4+ yıl) uygulayın ve dikimden önce toprak solarizasyonu yapın.",
+      "irrigation": "Mantar serin ve ıslak topraklarda geliştiği için aşırı sulamadan kaçının. Mantar hareketini sınırlamak için kusursuz drenaj sağlayın.",
+      "fertilizer": "Mantarı teşvik edebilecek yüksek azotlu gübrelerden kaçının; gerekirse toprağı hafifçe asitlendirmek için amonyum sülfat veya organik madde kullanın."
+    }
+  },
+  "Fig__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Prune in winter to remove crossing branches and maintain an open center for sunlight.",
+      "irrigation": "Once established, figs are drought-tolerant, but regular watering during dry spells ensures better fruit quality and size.",
+      "fertilizer": "Figs generally need little fertilizer. If growth is slow (less than 30cm/year), apply a balanced 10-10-10 fertilizer in early spring."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Çapraz dalları çıkarmak ve güneş ışığı için açık bir merkez sağlamak amacıyla kışın budama yapın.",
+      "irrigation": "Kök saldıktan sonra incirler kuraklığa dayanıklıdır, ancak kurak dönemlerde düzenli sulama daha iyi meyve kalitesi ve boyutu sağlar.",
+      "fertilizer": "İncirler genellikle az gübreye ihtiyaç duyar. Büyüme yavaşsa (yılda 30 cm'den az), erken baharda dengeli bir 10-10-10 gübresi uygulayın."
+    }
+  },
+  "Fig__Infected": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "If Fig Rust is present, apply copper-based fungicides in late spring. If it's Mosaic Virus, there is no cure; control mites and avoid taking cuttings.",
+      "irrigation": "Water at the soil level. Wetting fig leaves often leads to rust and leaf spot diseases due to the leaf's texture.",
+      "fertilizer": "Apply seaweed extract or organic compost to strengthen the tree's natural defense mechanisms against pathogens."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "İncir Pası mevcutsa, bahar sonunda bakır bazlı fungisitler uygulayın. Eğer Mozaik Virüsü ise tedavisi yoktur; akarları kontrol edin ve çelik almaktan kaçının.",
+      "irrigation": "Toprak seviyesinde sulayın. İncir yapraklarını ıslatmak, yaprak dokusu nedeniyle genellikle pas ve yaprak lekesi hastalıklarına yol açar.",
+      "fertilizer": "Ağacın patojenlere karşı doğal savunma mekanizmalarını güçlendirmek için deniz yosunu özü veya organik kompost uygulayın."
+    }
+  },
+  "Grape__Black_Rot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Strict sanitation is key. Remove all 'mummified' berries from the vine. Apply fungicides like myclobutanil or mancozeb from bud break to bloom.",
+      "irrigation": "Ensure good vineyard site selection with high airflow. Avoid irrigation methods that keep the fruit clusters wet for long periods.",
+      "fertilizer": "Avoid over-fertilizing with nitrogen, which creates dense canopies that trap moisture and favor disease spread."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Sıkı sanitasyon anahtardır. Asmadaki tüm 'mumyalanmış' taneleri uzaklaştırın. Tomurcuk patlamasından çiçeklenmeye kadar miklobutanil veya mankozeb gibi fungisitler uygulayın.",
+      "irrigation": "Yüksek hava akışı olan iyi bir bağ yeri seçimi sağlayın. Meyve salkımlarını uzun süre ıslak tutan sulama yöntemlerinden kaçının.",
+      "fertilizer": "Nemi hapseden ve hastalığın yayılmasını kolaylaştıran yoğun kanopiler oluşturan aşırı azotlu gübrelemeden kaçının."
+    }
+  },
+  "Grape__Esca_(Black_Measles)": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No cure for the fungus once in the wood. Prune out infected cordons and protect large pruning wounds with sealants. Avoid pruning during wet weather.",
+      "irrigation": "Maintain consistent soil moisture to reduce physiological stress, which can trigger sudden 'apoplexy' (wilting) in summer.",
+      "fertilizer": "Focus on foliar application of micronutrients (Magnesium and Zinc) to bypass impaired vascular systems and maintain vine vigor."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Mantar odun dokusuna yerleştikten sonra kesin bir tedavisi yoktur. Enfekte kolları budayarak uzaklaştırın ve büyük budama yaralarını koruyucu macunlarla kapatın. Islak havalarda budama yapmaktan kaçının.",
+      "irrigation": "Yazın ani kurumaları (apopleksi) tetikleyebilecek fizyolojik stresi azaltmak için tutarlı bir toprak nemi sağlayın.",
+      "fertilizer": "Hasar görmüş damar sistemini baypas etmek ve asma canlılığını korumak için yapraktan mikro besin (Magnezyum ve Çinko) uygulamasına odaklanın."
+    }
+  },
+  "Grape__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Maintain annual dormant pruning to balance crop load and ensure proper air circulation.",
+      "irrigation": "Provide deep watering every 7-10 days depending on soil type; reduce watering during ripening (veraison) to concentrate sugars.",
+      "fertilizer": "Apply a balanced NPK fertilizer in early spring and ensure adequate Boron for proper fruit set and berry development."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Ürün yükünü dengelemek ve düzgün hava sirkülasyonu sağlamak için yıllık kış budamasını ihmal etmeyin.",
+      "irrigation": "Toprak yapısına göre 7-10 günde bir derin sulama yapın; şeker oranını artırmak için olgunlaşma (ben düşme) döneminde sulamayı azaltın.",
+      "fertilizer": "Erken baharda dengeli bir NPK gübresi uygulayın ve düzgün meyve tutumu ve tane gelişimi için yeterli Bor sağladığınızdan emin olun."
+    }
+  },
+  "Grape__Leaf_Blight_(Isariopsis_Leaf_Spot)": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply copper-based fungicides or mancozeb after harvest to reduce overwintering inoculum. Prune to open the canopy.",
+      "irrigation": "Use drip irrigation to keep the foliage dry. Avoid overhead sprinklers, as leaf wetness encourages the spread of lesions.",
+      "fertilizer": "Ensure sufficient Potassium levels to strengthen leaf tissues and improve the vine's natural resistance to fungal spotting."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Kışlayan inokulumu azaltmak için hasattan sonra bakır bazlı fungisitler veya mankozeb uygulayın. Kanopiyi açmak için budama yapın.",
+      "irrigation": "Yaprakları kuru tutmak için damla sulama kullanın. Yaprak ıslaklığı lezyonların yayılmasını teşvik ettiğinden üstten fıskiyeden kaçının.",
+      "fertilizer": "Yaprak dokularını güçlendirmek ve asmanın mantar lekelerine karşı doğal direncini artırmak için yeterli Potasyum seviyelerini sağlayın."
+    }
+  },
+  "Olive__Aculus_Olearius": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Control olive bud mites using wettable sulfur or specific miticides during the spring shoot growth period.",
+      "irrigation": "Maintain moderate irrigation; avoid extreme water stress which weakens the tree and makes it more vulnerable to mite damage.",
+      "fertilizer": "Apply Zinc and Boron, as these micronutrients are essential for healthy bud development and help the tree recover from mite attacks."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Bahar sürgün büyüme döneminde ıslanabilir kükürt veya spesifik akarisitler kullanarak zeytin pas akarlarını kontrol altına alın.",
+      "irrigation": "Orta düzeyde sulama sağlayın; ağacı zayıflatan ve akar hasarına karşı daha savunmasız hale getiren aşırı su stresinden kaçının.",
+      "fertilizer": "Sağlıklı tomurcuk gelişimi için gerekli olan ve ağacın akar saldırılarından kurtulmasına yardımcı olan Çinko ve Bor uygulayın."
+    }
+  },
+  "Olive__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Light annual pruning is recommended to ensure sunlight reaches the interior of the tree.",
+      "irrigation": "Drought tolerant, but supplemental irrigation during flowering and fruit growth (July-August) significantly increases yield.",
+      "fertilizer": "Nitrogen is key; apply ammonium sulfate in late winter to stimulate new vegetative growth and increase flowering."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Güneş ışığının ağacın içine ulaşmasını sağlamak için her yıl hafif budama önerilir.",
+      "irrigation": "Kuraklığa dayanıklıdır, ancak çiçeklenme ve meyve büyüme döneminde (Temmuz-Ağustos) ek sulama verimi önemli ölçüde artırır.",
+      "fertilizer": "Azot kritiktir; yeni vejetatif büyümeyi uyarmak ve çiçeklenmeyi artırmak için kış sonunda amonyum sülfat uygulayın."
+    }
+  },
+  "Olive__Peacock_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply preventive copper-based fungicides immediately after harvest and again in early spring before rainy spells.",
+      "irrigation": "Ensure good air drainage and avoid high-density planting in low-lying, damp areas where humidity lingers.",
+      "fertilizer": "Avoid late-season nitrogen applications, which produce soft growth that is highly susceptible to fungal infection in autumn."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Hasattan hemen sonra ve bahar başında yağışlı dönemlerden önce önleyici bakır bazlı fungisitler uygulayın.",
+      "irrigation": "İyi hava sirkülasyonu sağlayın ve nemin kalıcı olduğu alçak, rutubetli alanlarda yüksek yoğunluklu dikimden kaçının.",
+      "fertilizer": "Sonbaharda mantar enfeksiyonuna karşı çok hassas olan yumuşak dokulu büyüme üreten geç sezon azot uygulamalarından kaçının."
+    }
+  },
+  "Peach__Bacterial_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Plant resistant cultivars. Apply copper sprays during dormancy and oxytetracycline during the growing season if necessary.",
+      "irrigation": "Use drip irrigation or soaker hoses. Avoid wetting the leaves, as the bacteria spread via splashing water and wind.",
+      "fertilizer": "Ensure balanced nutrition; avoid excessive nitrogen which leads to lush growth that the bacteria can easily colonize."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Dirençli çeşitler dikin. Durgun dönemde bakır spreyler, büyüme mevsiminde ise gerekirse oksitetrasiklin uygulayın.",
+      "irrigation": "Damla sulama veya sızdırma hortumları kullanın. Bakteriler su sıçraması ve rüzgarla yayıldığı için yaprakları ıslatmaktan kaçının.",
+      "fertilizer": "Dengeli besleme sağlayın; bakterilerin kolayca yerleşebileceği aşırı sulu büyümeye neden olan fazla azottan kaçının."
+    }
+  },
+  "Peach__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Thin the fruit early in the season to prevent branch breakage and improve fruit size and flavor.",
+      "irrigation": "Water deeply and regularly, especially during the 'final swell' (the last few weeks before harvest) to maximize fruit size.",
+      "fertilizer": "Apply organic matter or a balanced fertilizer in spring. Peaches are moderate feeders that respond well to compost."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Dal kırılmalarını önlemek, meyve boyutunu ve lezzetini artırmak için sezon başında meyve seyreltmesi yapın.",
+      "irrigation": "Meyve boyutunu maksimize etmek için özellikle 'son büyüme' aşamasında (hasattan önceki son birkaç hafta) derin ve düzenli sulayın.",
+      "fertilizer": "Baharda organik madde veya dengeli bir gübre uygulayın. Şeftaliler, komposta iyi yanıt veren orta derecede besin tüketicileridir."
+    }
+  },
+  "Pepper_Bell__Bacterial_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply a mixture of copper-based fungicides and mancozeb. Destroy infected plant debris and practice a 2-year crop rotation.",
+      "irrigation": "Avoid overhead irrigation. Water in the morning so that any accidental leaf moisture dries quickly in the sun.",
+      "fertilizer": "Use potassium-rich fertilizers to help thicken the fruit walls and improve the plant's overall structural integrity."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Bakır bazlı fungisitler ve mankozeb karışımı uygulayın. Enfekte bitki artıklarını imha edin ve 2 yıllık ürün rotasyonu uygulayın.",
+      "irrigation": "Üstten sulamadan kaçının. Sabah saatlerinde sulama yapın ki kazara ıslanan yapraklar güneşte hızla kuruyabilsin.",
+      "fertilizer": "Meyve duvarlarının kalınlaşmasına ve bitkinin genel yapısal bütünlüğünün gelişmesine yardımcı olmak için potasyum açısından zengin gübreler kullanın."
+    }
+  },
+  "Pepper_Bell__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Use mulch to maintain soil temperature and moisture, and provide support stakes for loaded plants.",
+      "irrigation": "Keep soil evenly moist. Inconsistent watering can lead to Blossom End Rot due to localized calcium deficiency.",
+      "fertilizer": "Prioritize phosphorus and potassium once flowering begins to encourage high-quality fruit production instead of just foliage."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Toprak sıcaklığını ve nemini korumak için malç kullanın ve ağırlaşan bitkiler için destek çubukları sağlayın.",
+      "irrigation": "Toprağı eşit derecede nemli tutun. Düzensiz sulama, lokalize kalsiyum eksikliği nedeniyle Çiçek Burnu Çürüklüğü'ne yol açabilir.",
+      "fertilizer": "Sadece yaprak değil, yüksek kaliteli meyve üretimini teşvik etmek için çiçeklenme başladığında fosfor ve potasyuma öncelik verin."
+    }
+  },
+  "Potato__Early_Blight": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply fungicides containing mancozeb or chlorothalonil. Remove lower infected leaves and ensure crop rotation with non-solanaceous plants.",
+      "irrigation": "Use drip irrigation; avoid overhead sprinklers to minimize leaf wetness which favors spore germination.",
+      "fertilizer": "Maintain high soil fertility, especially Nitrogen and Potassium, as stressed or nutrient-deficient plants are more susceptible."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Mankozeb veya klorotalonil içeren fungisitler uygulayın. Alttaki enfekte yaprakları uzaklaştırın ve patlıcangiller dışındaki bitkilerle ürün rotasyonu yapın.",
+      "irrigation": "Damla sulama kullanın; spor çimlenmesini kolaylaştıran yaprak ıslaklığını minimize etmek için üstten fıskiyeden kaçının.",
+      "fertilizer": "Toprak verimliliğini, özellikle Azot ve Potasyum seviyelerini yüksek tutun; stresli veya besin eksikliği çeken bitkiler daha duyarlıdır."
+    }
+  },
+  "Potato__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Practice 'hilling' (piling soil around the base) to protect developing tubers from sunlight and pests.",
+      "irrigation": "Keep soil moisture consistent. Drought stress followed by heavy rain can cause internal tuber defects like hollow heart.",
+      "fertilizer": "Apply a balanced NPK fertilizer at planting and side-dress with nitrogen before the plants start to bloom."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Gelişmekte olan yumruları güneş ışığından ve zararlılardan korumak için 'boğaz doldurma' (kök çevresine toprak yığma) yapın.",
+      "irrigation": "Toprak nemini tutarlı tutun. Kuraklık stresini takip eden ağır yağışlar, yumru içinde 'boş kalp' gibi kusurlara neden olabilir.",
+      "fertilizer": "Dikim sırasında dengeli bir NPK gübresi uygulayın ve bitkiler çiçek açmaya başlamadan önce azot ile üst gübreleme yapın."
+    }
+  },
+  "Potato__Late_Blight": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "This is a high-risk disease. Apply systemic fungicides like metalaxyl immediately. Destroy all infected plants and tubers to prevent spread.",
+      "irrigation": "Stop irrigation during periods of high humidity and cool temperatures to slow the rapid spread of the pathogen.",
+      "fertilizer": "Avoid excess nitrogen, which creates a dense canopy that traps moisture and accelerates the epidemic."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Bu yüksek riskli bir hastalıktır. Derhal metalaksil gibi sistemik fungisitler uygulayın. Yayılımı önlemek için tüm enfekte bitki ve yumruları imha edin.",
+      "irrigation": "Patojenin hızlı yayılmasını yavaşlatmak için yüksek nem ve serin sıcaklıkların olduğu dönemlerde sulamayı durdurun.",
+      "fertilizer": "Nemi hapseden ve salgını hızlandıran yoğun bir kanopi oluşturan aşırı azottan kaçının."
+    }
+  },
+  "Strawberry__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Use straw mulch to keep berries off the soil, preventing rot and keeping fruit clean.",
+      "irrigation": "Water at the base early in the morning. Strawberries have shallow roots and require frequent, light watering.",
+      "fertilizer": "Apply a balanced fertilizer in early spring and again after renovation (post-harvest pruning) to support next year's buds."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Meyveleri topraktan uzak tutmak, çürümeyi önlemek ve meyveyi temiz tutmak için saman malçı kullanın.",
+      "irrigation": "Sabah erken saatlerde dipten sulayın. Çileklerin kökleri yüzeydedir ve sık, hafif sulama gerektirir.",
+      "fertilizer": "Erken baharda ve yenileme (hasat sonrası budama) sonrasında, gelecek yılın tomurcuklarını desteklemek için dengeli gübre uygulayın."
+    }
+  },
+  "Strawberry__Leaf_Scorch": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Remove and destroy old, spotted leaves. If severe, apply fungicides like thiophanate-methyl or copper-based products.",
+      "irrigation": "Improve air circulation and avoid evening watering. Ensure the planting site has excellent drainage.",
+      "fertilizer": "Avoid high-nitrogen fertilizers in the spring before harvest, as this makes the foliage more susceptible to the fungus."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Eski ve lekeli yaprakları söküp imha edin. Şiddetliyse, tiyofanat-metil veya bakır bazlı fungisitler uygulayın.",
+      "irrigation": "Hava sirkülasyonunu iyileştirin ve akşam sulamasından kaçının. Dikim alanının mükemmel drenaja sahip olduğundan emin olun.",
+      "fertilizer": "Hasat öncesi bahar döneminde yüksek azotlu gübrelerden kaçının, çünkü bu durum yaprakları mantara karşı daha hassas hale getirir."
+    }
+  },
+  "Tomato__Bacterial_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply a combination of copper fungicides and mancozeb. Remove infected plants and debris to reduce the bacterial population.",
+      "irrigation": "Strictly avoid overhead watering. Bacteria spread quickly through splashing water and high humidity.",
+      "fertilizer": "Ensure adequate Potassium to strengthen plant tissues. Avoid excessive nitrogen which encourages soft, susceptible growth."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Bakır fungisitleri ve mankozeb kombinasyonu uygulayın. Bakteri popülasyonunu azaltmak için enfekte bitkileri ve artıkları uzaklaştırın.",
+      "irrigation": "Üstten sulamadan kesinlikle kaçının. Bakteriler su sıçraması ve yüksek nem yoluyla hızla yayılır.",
+      "fertilizer": "Bitki dokularını güçlendirmek için yeterli Potasyum sağlayın. Yumuşak ve hassas büyümeyi teşvik eden aşırı azottan kaçının."
+    }
+  },
+  "Tomato__Early_Blight": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Prune lower leaves to prevent soil-borne spores from splashing up. Use fungicides like chlorothalonil or copper early in the season.",
+      "irrigation": "Use mulch and drip irrigation. Keeping the soil covered prevents spores from reaching the lower foliage.",
+      "fertilizer": "Maintain consistent feeding. A steady supply of nutrients helps the plant outgrow the damage caused by the lower leaf spots."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Toprak kaynaklı sporların yukarı sıçramasını önlemek için alt yaprakları budayın. Sezon başında klorotalonil veya bakır bazlı fungisitler kullanın.",
+      "irrigation": "Malç ve damla sulama kullanın. Toprağın örtülü tutulması, sporların alt yapraklara ulaşmasını engeller.",
+      "fertilizer": "Düzenli beslemeyi sürdürün. Sürekli besin alımı, bitkinin alt yaprak lekelerinin verdiği hasarı telafi ederek büyümesine yardımcı olur."
+    }
+  },
+  "Tomato__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Support plants with cages or stakes and remove 'suckers' (side shoots) to improve airflow and fruit size.",
+      "irrigation": "Water deeply and regularly at the base. Inconsistent watering leads to Blossom End Rot (Calcium deficiency) or fruit cracking.",
+      "fertilizer": "Apply a high-phosphorus fertilizer during flowering to encourage fruit set. Supplement with compost throughout the season."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Bitkileri kafes veya kazıklarla destekleyin ve hava akışını ve meyve boyutunu iyileştirmek için 'koltuk altı' sürgünlerini temizleyin.",
+      "irrigation": "Dipten derin ve düzenli sulayın. Düzensiz sulama, Çiçek Burnu Çürüklüğü (Kalsiyum eksikliği) veya meyve çatlamasına neden olur.",
+      "fertilizer": "Meyve tutumunu teşvik etmek için çiçeklenme sırasında yüksek fosforlu gübre uygulayın. Sezon boyunca kompost ile takviye yapın."
+    }
+  },
+  "Tomato__Late_Blight": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Act fast as this can destroy a crop in days. Use fungicides like chlorothalonil or copper immediately. Destroy infected plants by burning or bagging.",
+      "irrigation": "Avoid any moisture on leaves. Improve plant spacing to ensure that foliage dries as quickly as possible after rain.",
+      "fertilizer": "Avoid late-season fertilization that encourages new, tender foliage which is the most vulnerable to Late Blight spores."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Hızlı hareket edin; bu hastalık bir ürünü günler içinde yok edebilir. Derhal klorotalonil veya bakır uygulayın. Enfekte bitkileri yakarak veya torbalayarak imha edin.",
+      "irrigation": "Yapraklarda hiçbir nem kalmamasına dikkat edin. Yağmurdan sonra yaprakların mümkün olduğunca çabuk kuruması için bitki aralıklarını geniş tutun.",
+      "fertilizer": "Geç sezon gübrelemesinden kaçının; bu durum, mildiyö sporlarına karşı en savunmasız olan yeni ve taze yaprak oluşumunu teşvik eder."
+    }
+  },
+  "Tomato__Leaf_Mold": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Increase ventilation in greenhouses. Apply fungicides like mancozeb or copper when the first symptoms appear on the underside of leaves.",
+      "irrigation": "Keep humidity levels below 85% if possible. Water early in the morning so the garden environment dries out during the day.",
+      "fertilizer": "Maintain balanced NPK. Excessive nitrogen coupled with high humidity is the primary driver for this disease."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Seralarda havalandırmayı artırın. Yaprakların alt kısmında ilk belirtiler görüldüğünde mankozeb veya bakır bazlı fungisitler uygulayın.",
+      "irrigation": "Mümkünse nem seviyelerini %85'in altında tutun. Sabah erken saatlerde sulayın ki bahçe ortamı gün boyunca kurusun.",
+      "fertilizer": "Dengeli NPK sağlayın. Yüksek nem ile birleşen aşırı azot, bu hastalığın ana tetikleyicisidir."
+    }
+  },
+  "Tomato__Mosaic_Virus": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No chemical cure. Remove and destroy infected plants immediately. Wash hands and tools with soap; smokers should be careful as the virus can be carried on tobacco.",
+      "irrigation": "Maintain steady irrigation to avoid plant stress, but ensure no water-to-water contact between healthy and diseased plants.",
+      "fertilizer": "Avoid handling plants after fertilizing unless hands are sanitized. Ensure balanced nutrition to support the plant's overall vigor."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Kimyasal tedavisi yoktur. Enfekte bitkileri hemen söküp imha edin. Elleri ve aletleri sabunla yıkayın; virüs tütünde taşınabildiği için sigara içenler dikkatli olmalıdır.",
+      "irrigation": "Bitki stresini önlemek için düzenli sulama sağlayın, ancak sağlıklı ve hastalıklı bitkiler arasında su yoluyla temas olmadığından emin olun.",
+      "fertilizer": "Gübrelemeden sonra eller sanitize edilmedikçe bitkilere dokunmayın. Bitkinin genel canlılığını desteklemek için dengeli besleme sağlayın."
+    }
+  },
+  "Tomato__Septoria_Leaf_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply fungicides like chlorothalonil or copper. Remove lower infected leaves and destroy plant debris at the end of the season.",
+      "irrigation": "Use drip irrigation and mulch. Splashing water from the soil is the primary way spores reach the lower leaves.",
+      "fertilizer": "Maintain optimal nitrogen levels. Plants with low vigor are often more severely affected by Septoria."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Klorotalonil veya bakır bazlı fungisitler uygulayın. Alttaki enfekte yaprakları uzaklaştırın ve sezon sonunda bitki artıklarını imha edin.",
+      "irrigation": "Damla sulama ve malç kullanın. Topraktan sıçrayan su, sporların alt yapraklara ulaşmasının ana yoludur.",
+      "fertilizer": "Optimal azot seviyelerini koruyun. Canlılığı düşük olan bitkiler genellikle Septoria'dan daha şiddetli etkilenir."
+    }
+  },
+  "Tomato__Spider_Mites": {
+    "en": {
+      "status": "Pest Infestation",
+      "treatment": "Spray with insecticidal soap, neem oil, or specific miticides. Increasing humidity by misting can help suppress mite populations.",
+      "irrigation": "Keep plants well-watered. Drought-stressed plants are much more attractive to spider mites and suffer more damage.",
+      "fertilizer": "Avoid excessive nitrogen, which can lead to lush growth that encourages rapid mite reproduction."
+    },
+    "tr": {
+      "status": "Zararlı İstilası",
+      "treatment": "İnsektisit sabun, neem yağı veya spesifik akarisitler püskürtün. Yapraklara su püskürterek nemi artırmak akar popülasyonunu baskılamaya yardımcı olabilir.",
+      "irrigation": "Bitkileri iyi sulanmış tutun. Kuraklık stresi çeken bitkiler kırmızı örümcekler için çok daha çekicidir ve daha fazla zarar görürler.",
+      "fertilizer": "Akarların hızlı üremesini teşvik eden aşırı derecede taze büyüme oluşumunu engellemek için fazla azottan kaçının."
+    }
+  },
+  "Tomato__Spotted_Wilt": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No cure for the virus. Control thrips (the vector) with blue sticky traps or insecticides. Remove and burn symptomatic plants immediately.",
+      "irrigation": "Consistent irrigation helps reduce the stress that can exacerbate the 'bronzing' symptoms of the virus.",
+      "fertilizer": "Apply balanced micronutrients (Zinc/Magnesium) to help the plant's metabolism function as long as possible after infection."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Virüsün tedavisi yoktur. Mavi yapışkan tuzaklar veya insektisitlerle tripsleri (vektör) kontrol edin. Belirti gösteren bitkileri derhal söküp yakın.",
+      "irrigation": "Düzenli sulama, virüsün 'bronzlaşma' semptomlarını kötüleştirebilen stresi azaltmaya yardımcı olur.",
+      "fertilizer": "Enfeksiyondan sonra bitkinin metabolizmasının mümkün olduğunca uzun süre çalışmasına yardımcı olmak için dengeli mikro besinler (Çinko/Magnezyum) uygulayın."
+    }
+  },
+  "Tomato__Target_Spot": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply fungicides such as mancozeb or chlorothalonil. Improve air circulation by pruning and proper spacing between plants.",
+      "irrigation": "Avoid overhead watering. Direct water to the root zone to keep the leaf canopy dry, especially during humid periods.",
+      "fertilizer": "Ensure sufficient potassium to improve the structural strength of leaf tissues against fungal penetration."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Mankozeb veya klorotalonil gibi fungisitler uygulayın. Budama yaparak ve bitkiler arası mesafeyi doğru ayarlayarak hava sirkülasyonunu iyileştirin.",
+      "irrigation": "Üstten sulamadan kaçının. Özellikle nemli dönemlerde yaprak örtüsünü kuru tutmak için suyu doğrudan kök bölgesine verin.",
+      "fertilizer": "Yaprak dokularının mantar girişine karşı yapısal gücünü artırmak için yeterli potasyum sağladığınızdan emin olun."
+    }
+  },
+  "Tomato__Yellow_Leaf_Curl_Virus": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "No cure. Control whiteflies with systemic insecticides or neem oil. Use physical barriers like fine mesh covers to prevent whiteflies from reaching plants.",
+      "irrigation": "Maintain adequate moisture; water stress makes the leaf curling and stunting symptoms much more severe.",
+      "fertilizer": "Avoid excessive nitrogen fertilization, which attracts whiteflies to the succulent new growth."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Tedavisi yoktur. Beyaz sinekleri sistemik insektisitler veya neem yağı ile kontrol edin. Beyaz sineklerin bitkilere ulaşmasını önlemek için ince file örtüler gibi fiziksel engeller kullanın.",
+      "irrigation": "Yeterli nemi koruyun; su stresi yaprak kıvrılması ve cüceleşme semptomlarını çok daha şiddetli hale getirir.",
+      "fertilizer": "Beyaz sinekleri bitkinin sukulent yeni büyümesine çeken aşırı azotlu gübrelemeden kaçının."
+    }
+  },
+  "Walnut_Anthracnose_Leaf": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Apply copper-based fungicides or maneb starting at leaf burst. Rake and burn all fallen leaves in autumn to eliminate the primary source of infection.",
+      "irrigation": "Improve tree spacing for airflow. Avoid wetting leaves during irrigation, as moisture on the leaf surface promotes fungal development.",
+      "fertilizer": "Apply a balanced fertilizer in spring to help the tree replace foliage lost to premature leaf drop."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Yaprak patlamasından itibaren bakır bazlı fungisitler veya maneb uygulayın. Enfeksiyonun ana kaynağını yok etmek için sonbaharda dökülen tüm yaprakları tırmıklayıp yakın.",
+      "irrigation": "Hava akışı için ağaç aralıklarını iyileştirin. Yaprak yüzeyindeki nem mantar gelişimini teşvik ettiğinden, sulama sırasında yaprakları ıslatmaktan kaçının.",
+      "fertilizer": "Erken yaprak dökümü nedeniyle kaybolan yaprakların yerini doldurması için ağaca ilkbaharda dengeli bir gübre uygulayın."
+    }
+  },
+  "Walnut__Blotch_Leaf": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Use protective copper sprays during periods of high humidity. Practice good sanitation by removing infected twigs and leaf litter.",
+      "irrigation": "Ensure excellent soil drainage. Water-logged soil can weaken the tree's immune system against leaf spotting fungi.",
+      "fertilizer": "Focus on potassium and phosphorus to enhance wood maturity and the tree's overall hardiness against infections."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Yüksek nemli dönemlerde koruyucu bakır spreyler kullanın. Enfekte dalları ve yaprak döküntülerini uzaklaştırarak iyi bir sanitasyon uygulayın.",
+      "irrigation": "Mükemmel toprak drenajı sağlayın. Suyla dolmuş toprak, ağacın yaprak lekesi mantarlarına karşı bağışıklık sistemini zayıflatabilir.",
+      "fertilizer": "Odunsu doku olgunluğunu ve ağacın enfeksiyonlara karşı genel dayanıklılığını artırmak için potasyum ve fosfora odaklanın."
+    }
+  },
+  "Walnut__Gall_Mite_Leaf": {
+    "en": {
+      "status": "Pest Infestation",
+      "treatment": "Usually cosmetic and doesn't harm nut production. If severe, apply sulfur-based sprays during the dormant season or when buds begin to swell.",
+      "irrigation": "No specific changes needed, but healthy trees withstand gall mite feeding better without significant defoliation.",
+      "fertilizer": "Maintain consistent nutrient levels. Do not over-fertilize with nitrogen as it may increase succulent growth favored by mites."
+    },
+    "tr": {
+      "status": "Zararlı İstilası",
+      "treatment": "Genellikle kozmetiktir ve ceviz üretimine zarar vermez. Şiddetliyse, durgun dönemde veya tomurcuklar şişmeye başladığında kükürt bazlı spreyler uygulayın.",
+      "irrigation": "Özel bir değişiklik gerekmez, ancak sağlıklı ağaçlar yaprak dökümü yaşamadan akar beslenmesine daha iyi dayanır.",
+      "fertilizer": "Düzenli besin seviyelerini koruyun. Akarların sevdiği taze büyümeyi artırabileceği için aşırı azotlu gübreleme yapmayın."
+    }
+  },
+  "Walnut__Healthy": {
+    "en": {
+      "status": "Healthy",
+      "treatment": "No treatment needed. Prune in mid-summer or late winter to remove dead wood and maintain structure.",
+      "irrigation": "Walnuts need deep, infrequent watering. Ensure the water reaches the deep taproot system, especially during young tree establishment.",
+      "fertilizer": "Perform a soil test every 2-3 years. Apply nitrogen-rich fertilizer in late winter to support vigorous spring growth and nut development."
+    },
+    "tr": {
+      "status": "Sağlıklı",
+      "treatment": "Tedavi gerekmiyor. Ölü dalları temizlemek ve yapıyı korumak için yaz ortasında veya kış sonunda budama yapın.",
+      "irrigation": "Cevizler derin ve seyrek sulamaya ihtiyaç duyar. Özellikle genç ağaçların kurulumu sırasında suyun derin kazık kök sistemine ulaştığından emin olun.",
+      "fertilizer": "Her 2-3 yılda bir toprak testi yapın. Güçlü bahar büyümesini ve ceviz gelişimini desteklemek için kış sonunda azotça zengin gübre uygulayın."
+    }
+  },
+  "Walnut__Shot_Hole": {
+    "en": {
+      "status": "Diseased",
+      "treatment": "Prune out infected twigs and destroy them. Apply copper-based fungicides or Bordeaux mixture during the dormant stage and at bud break to prevent new infections.",
+      "irrigation": "Use drip irrigation. Avoid overhead watering to prevent water droplets from spreading the fungal spores or bacteria across the foliage.",
+      "fertilizer": "Ensure balanced nutrition. Potassium is essential to strengthen the leaf tissues and improve the tree's recovery from the 'shot hole' effect where tissue drops out."
+    },
+    "tr": {
+      "status": "Hastalıklı",
+      "treatment": "Enfekte olmuş dalları budayın ve imha edin. Yeni enfeksiyonları önlemek için durgun dönemde ve tomurcuk patlaması sırasında bakır bazlı fungisitler veya Bordo bulamacı uygulayın.",
+      "irrigation": "Damla sulama kullanın. Su damlacıklarının mantar sporlarını veya bakterileri yapraklara yaymasını önlemek için üstten sulamadan kaçının.",
+      "fertilizer": "Dengeli besleme sağlayın. Dokunun düştüğü 'saçma deliği' etkisine karşı yaprak dokularını güçlendirmek ve ağacın toparlanmasını sağlamak için potasyum gereklidir."
+    }
+  }
+}

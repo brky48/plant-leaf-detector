@@ -1,0 +1,7 @@
+streamlit
+tensorflow
+pillow
+numpy
+pandas
+huggingface_hub
+scikit-learn
