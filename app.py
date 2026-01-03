@@ -1,5 +1,7 @@
 import streamlit as st
 import tensorflow as tf
+from tensorflow.keras.applications.inception_v3 import InceptionV3, preprocess_input
+from tensorflow.keras import layers, models
 from PIL import Image
 import numpy as np
 import json
@@ -13,15 +15,16 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 # --- STEP 2: RESOURCE LOADING (CACHED) ---
 @st.cache_resource
 def load_resources():
-    from tensorflow.keras.applications import InceptionV3
-    from tensorflow.keras import layers, models
-    
+    """
+    Downloads the model weights and reconstructs architecture.
+    """
     # 1. MİMARİYİ TEMİZDEN KUR
     base_model = InceptionV3(weights=None, include_top=False, input_shape=(299, 299, 3))
     x = base_model.output
     x = layers.GlobalAveragePooling2D()(x)
     x = layers.Dense(512, activation='relu')(x)
     x = layers.Dropout(0.5)(x)
+    # Sınıf sayını 61 olarak doğruluyoruz
     predictions = layers.Dense(61, activation='softmax')(x) 
     model = models.Model(inputs=base_model.input, outputs=predictions)
     
@@ -30,7 +33,7 @@ def load_resources():
     FILENAME = "plant_model_final_legacy.h5" 
     weights_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # Keras 3, bu dosyayı 'legacy' olarak tanıyacak ve by_name ile hatasız eşleştirecektir
+    # by_name=True ile katman isimlerini eşleştirerek yükle
     model.load_weights(weights_path, by_name=True, skip_mismatch=True)
     
     # 3. METADATALARI YÜKLE
@@ -87,17 +90,21 @@ with tab1:
         if st.button(t["btn_predict"]):
             # Resize for InceptionV3
             img = image.resize((299, 299))
-            img_array = np.array(img) / 255.0
+            img_array = np.array(img)
             img_array = np.expand_dims(img_array, axis=0)
+            
+            # KRİTİK DÜZELTME: Manuel bölme yerine InceptionV3'ün beklediği preprocess fonksiyonu
+            img_array = preprocess_input(img_array.astype(np.float32))
             
             with st.spinner('AI is processing...' if lang_code == "en" else 'Yapay zeka inceliyor...'):
                 preds = model.predict(img_array)
                 confidence = np.max(preds)
                 predicted_label = labels[np.argmax(preds)]
 
-            if confidence < 0.75:
+            # TEST İÇİN: Eşik değerini 0.40'a düşürdük (skorların yükselip yükselmediğini görmek için)
+            if confidence < 0.40:
                 st.warning(t["confidence_err"])
-                st.info(f"System Confidence: {confidence:.2f}")
+                st.info(f"System Confidence: {confidence:.4f}")
             else:
                 st.success(f"### Result: {predicted_label.replace('___', ' - ')}")
                 st.progress(float(confidence))
@@ -122,10 +129,15 @@ with tab2:
     
     st.divider()
     st.subheader(t["csv_title"])
-    st.dataframe(
-        performance_df.style.background_gradient(cmap='YlGn', subset=['f1-score']), 
-        use_container_width=True
-    )
+    
+    # Tablo hatasını gidermek için matplotlib yüklü değilse renklendirmeyi atla
+    try:
+        st.dataframe(
+            performance_df.style.background_gradient(cmap='YlGn', subset=['f1-score']), 
+            use_container_width=True
+        )
+    except Exception:
+        st.dataframe(performance_df, use_container_width=True)
 
 # --- FOOTER ---
 st.sidebar.markdown("---")
