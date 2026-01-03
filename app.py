@@ -1,46 +1,35 @@
 import streamlit as st
 import os
 
-# --- STEP 1: SET KERAS BACKEND ---
-# This ensures Keras 3 uses TensorFlow as its engine before any other imports
+# Keras 3 çakışmalarını önlemek için arka planı sabitle
 os.environ["KERAS_BACKEND"] = "tensorflow"
 
-import keras  # Import standalone Keras 3
-import numpy as np
+import tensorflow as tf
 from PIL import Image
+import numpy as np
 import json
 import pandas as pd
 from huggingface_hub import hf_hub_download
 
-# --- STEP 2: PAGE CONFIGURATION ---
+# --- PAGE CONFIG ---
 st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_icon="🌿")
 
-# --- STEP 3: RESOURCE LOADING (CACHED) ---
 @st.cache_resource
 def load_resources():
-    """
-    Downloads the model from Hugging Face and loads local metadata using Keras 3.
-    """
-    # Define Hugging Face Repository details
     REPO_ID = "berkay48/plant-leaf-detector" 
     FILENAME = "plant_disease_detector_best.keras"
     
-    # Download the model file from HF Hub
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # CRITICAL FIX: Use the modern Keras 3 loader
-    # safe_mode=False allows loading InceptionV3 with custom configurations
-    model = keras.saving.load_model(model_path, compile=False, safe_mode=False)
+    # MIXED PRECISION OLMADAN, STANDART YÜKLEME
+    # compile=False: Eğitim metadatalarını yükleme
+    # safe_mode=False: InceptionV3 grafik yapısına izin ver
+    model = tf.keras.models.load_model(model_path, compile=False, safe_mode=False)
     
-    # Load class indices
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
-    
-    # Load bilingual knowledge base
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
         knowledge_base = json.load(f)
-    
-    # Load performance metrics
     performance_df = pd.read_csv('model_performance.csv')
     
     return model, class_indices, knowledge_base, performance_df
