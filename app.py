@@ -14,23 +14,25 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 @st.cache_resource
 def load_resources():
     """
-    Downloads the pure .h5 model from Hugging Face and resets the Keras graph.
+    Downloads the pure .h5 model and forces float32 policy to kill float16 errors.
     """
-    REPO_ID = "berkay48/plant-leaf-detector" 
-    # KRİTİK DÜZELTME 1: Kaggle'da oluşturduğumuz temizlenmiş modelin adı
-    FILENAME = "plant_disease_detector_pure.h5"
-    
-    # Download model from Hugging Face
-    model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
-    
-    # KRİTİK DÜZELTME 2: Bellekteki eski katman isimlerini ve bağlantıları temizler
-    # Bu, "dense expects 1 input but received 2" hatasını önlemek için hayati önemdedir.
+    # 1. TÜM POLİTİKALARI SIFIRLA (KRİTİK ADIM)
+    from tensorflow.keras import mixed_precision
+    mixed_precision.set_global_policy('float32')
     tf.keras.backend.clear_session()
     
-    # KRİTİK DÜZELTME 3: Saf float32 modelini yükleme
+    REPO_ID = "berkay48/plant-leaf-detector" 
+    # Kaggle'da 'pure' olarak kaydettiğin dosyanın adını buraya yaz
+    FILENAME = "plant_disease_detector_pure.h5"
+    
+    # Download from HF
+    model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
+    
+    # 2. MODELİ YÜKLE
+    # compile=False ve float32 politikası ile '2 input' hatasını imkansız hale getiriyoruz
     model = tf.keras.models.load_model(model_path, compile=False)
     
-    # Load metadata files
+    # Meta verileri yükle
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
