@@ -23,7 +23,10 @@ def load_resources():
     
     # Download the model file from HF Hub to local cache
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
-    model = tf.keras.models.load_model(model_path)
+    
+    # CRITICAL FIX: Added compile=False to resolve initialization input errors
+    # This skips loading the optimizer and training state, which is not needed for prediction.
+    model = tf.keras.models.load_model(model_path, compile=False)
     
     # Load class indices (mapping 0,1,2... to class names)
     with open('class_indices.json', 'r') as f:
