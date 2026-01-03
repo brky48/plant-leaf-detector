@@ -14,28 +14,27 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 @st.cache_resource
 def load_resources():
     """
-    Downloads the .h5 model from Hugging Face and loads local metadata.
+    Downloads the pure .h5 model from Hugging Face and resets the Keras graph.
     """
     REPO_ID = "berkay48/plant-leaf-detector" 
-    # DEĞİŞİKLİK: Yeni oluşturduğun .h5 dosyasının adını buraya yazıyoruz
-    FILENAME = "plant_disease_detector_best.h5"
+    # KRİTİK DÜZELTME 1: Kaggle'da oluşturduğumuz temizlenmiş modelin adı
+    FILENAME = "plant_disease_detector_pure.h5"
     
     # Download model from Hugging Face
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # .h5 modelleri için en stabil yükleme yöntemi
-    # compile=False: 213MB'tan 90MB'a düşen modelde zaten eğitim verisi yok, bu yüzden zorunlu.
+    # KRİTİK DÜZELTME 2: Bellekteki eski katman isimlerini ve bağlantıları temizler
+    # Bu, "dense expects 1 input but received 2" hatasını önlemek için hayati önemdedir.
+    tf.keras.backend.clear_session()
+    
+    # KRİTİK DÜZELTME 3: Saf float32 modelini yükleme
     model = tf.keras.models.load_model(model_path, compile=False)
     
-    # Load class indices
+    # Load metadata files
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
-    
-    # Load care guides
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
         knowledge_base = json.load(f)
-    
-    # Load performance metrics
     performance_df = pd.read_csv('model_performance.csv')
     
     return model, class_indices, knowledge_base, performance_df
