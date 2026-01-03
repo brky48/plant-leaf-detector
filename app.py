@@ -142,4 +142,4 @@ with tab2:
 # --- FOOTER ---
 st.sidebar.markdown("---")
 st.sidebar.write("👤 **Developer:** Berkay Korkut")
-st.sidebar.caption("MIS Graduation Project - 2026")
+st.sidebar.caption("PlantAI - Disease Detector")
