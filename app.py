@@ -7,6 +7,16 @@ import pandas as pd
 import os
 from huggingface_hub import hf_hub_download
 
+# --- NEW: MIXED PRECISION POLICY ---
+# This tells TensorFlow to handle the float16 weights correctly, matching your training environment.
+from tensorflow.keras import mixed_precision
+try:
+    policy = mixed_precision.Policy('mixed_float16')
+    mixed_precision.set_global_policy(policy)
+except:
+    pass # Handle cases where the environment might not support it
+#------------------------------
+
 # --- 1. PAGE CONFIGURATION ---
 # Set up the web page title and wide layout for better data visualization
 st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_icon="🌿")
