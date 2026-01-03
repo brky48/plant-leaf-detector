@@ -1,71 +1,70 @@
+import os
+# --- STEP 1: FORCE LEGACY KERAS ---
+# This must be set BEFORE importing tensorflow to avoid input tensor conflicts
+os.environ["TF_USE_LEGACY_KERAS"] = "1"
+
 import streamlit as st
 import tensorflow as tf
+import tf_keras as keras  # Use the legacy loader for stability
 from PIL import Image
 import numpy as np
 import json
 import pandas as pd
-import os
 from huggingface_hub import hf_hub_download
 
-# --- NEW: MIXED PRECISION POLICY ---
-# This tells TensorFlow to handle the float16 weights correctly, matching your training environment.
+# --- STEP 2: MIXED PRECISION POLICY ---
+# Matching your training environment for float16 weights
 from tensorflow.keras import mixed_precision
 try:
     policy = mixed_precision.Policy('mixed_float16')
     mixed_precision.set_global_policy(policy)
 except:
-    pass # Handle cases where the environment might not support it
-#------------------------------
+    pass 
 
-# --- 1. PAGE CONFIGURATION ---
-# Set up the web page title and wide layout for better data visualization
+# --- STEP 3: PAGE CONFIGURATION ---
 st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_icon="🌿")
 
-# --- 2. RESOURCE LOADING (CACHED) ---
+# --- STEP 4: RESOURCE LOADING (CACHED) ---
 @st.cache_resource
 def load_resources():
     """
-    Downloads the model from Hugging Face and loads local JSON/CSV data.
+    Downloads the model from Hugging Face and loads local metadata.
     """
-    # Define Hugging Face Repository details
     REPO_ID = "berkay48/plant-leaf-detector" 
     FILENAME = "plant_disease_detector_best.keras"
     
-    # Download the model file from HF Hub to local cache
+    # Download from Hugging Face
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # CRITICAL FIX: Added compile=False to resolve initialization input errors
-    # This skips loading the optimizer and training state, which is not needed for prediction.
-    model = tf.keras.models.load_model(model_path, compile=False)
+    # CRITICAL FIX: Use 'keras' (tf_keras) instead of 'tf.keras' 
+    # and compile=False to bypass training-specific input errors
+    model = keras.models.load_model(model_path, compile=False)
     
-    # Load class indices (mapping 0,1,2... to class names)
+    # Load class indices
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
     
-    # Load bilingual knowledge base for care recommendations
+    # Load care guides
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
         knowledge_base = json.load(f)
     
-    # Load performance metrics for Tab 2
+    # Load performance metrics
     performance_df = pd.read_csv('model_performance.csv')
     
     return model, class_indices, knowledge_base, performance_df
 
-# Execute resource loading
+# Execute loading
 try:
     model, class_indices, knowledge_base, performance_df = load_resources()
-    # Invert the dictionary: {index: "ClassName"}
     labels = {v: k for k, v in class_indices.items()}
 except Exception as e:
     st.error(f"Initialization Error: {e}")
     st.stop()
 
-# --- 3. SIDEBAR & LANGUAGE SETTINGS ---
-st.sidebar.title("Settings / Ayarlar")
+# --- STEP 5: LANGUAGE SETTINGS ---
 language = st.sidebar.selectbox("Language Selection / Dil Seçimi", ["English", "Türkçe"])
 lang_code = "en" if language == "English" else "tr"
 
-# Dictionary for multi-language UI support
 t = {
     "tab1": "Diagnosis" if lang_code == "en" else "Teşhis",
     "tab2": "Model Performance" if lang_code == "en" else "Model Performansı",
@@ -84,10 +83,10 @@ t = {
     "graph_file": "model_graph_en.png" if lang_code == "en" else "model_graph_tr.png"
 }
 
-# --- 4. APP TABS ---
+# --- STEP 6: APP TABS ---
 tab1, tab2 = st.tabs([f"🔍 {t['tab1']}", f"📊 {t['tab2']}"])
 
-# --- TAB 1: DIAGNOSIS & RECOMMENDATIONS ---
+# --- TAB 1: DIAGNOSIS ---
 with tab1:
     st.header(f"🌿 {t['header']}")
     uploaded_file = st.file_uploader(t["upload_msg"], type=['jpg', 'jpeg', 'png'])
@@ -97,61 +96,49 @@ with tab1:
         st.image(image, caption='User Upload', use_container_width=True)
         
         if st.button(t["btn_predict"]):
-            # Preprocessing (Match InceptionV3 requirements)
+            # Resize for InceptionV3
             img = image.resize((299, 299))
             img_array = np.array(img) / 255.0
             img_array = np.expand_dims(img_array, axis=0)
             
-            with st.spinner('AI is processing...' if lang_code == "en" else 'Yapay zeka inceliyor...'):
-                # Model Inference
+            with st.spinner('Analyzing...' if lang_code == "en" else 'Analiz ediliyor...'):
                 preds = model.predict(img_array)
                 confidence = np.max(preds)
-                predicted_idx = np.argmax(preds)
-                predicted_label = labels[predicted_idx]
+                predicted_label = labels[np.argmax(preds)]
 
-            # Strategy 1: Confidence Threshold Check (0.75)
             if confidence < 0.75:
                 st.warning(t["confidence_err"])
                 st.info(f"System Confidence: {confidence:.2f}")
             else:
                 st.success(f"### Result: {predicted_label.replace('___', ' - ')}")
-                st.progress(float(confidence)) # Visual confidence bar
+                st.progress(float(confidence))
                 
-                # Fetch data from Knowledge Base
                 info = knowledge_base.get(predicted_label, {}).get(lang_code)
                 if info:
                     with st.expander(f"💡 {t['expander_title']}", expanded=True):
                         st.markdown(f"**{t['status']}:** {info['status']}")
-                        # Show Treatment for diseased, Maintenance for healthy
                         if "treatment" in info:
                             st.error(f"💊 **{t['treatment']}:** {info['treatment']}")
                         else:
                             st.success(f"✨ **{t['maintenance']}:** {info['maintenance']}")
-                        
                         st.info(f"💧 **{t['irrigation']}:** {info['irrigation']}")
                         st.info(f"🧪 **{t['fertilizer']}:** {info['fertilizer']}")
 
-# --- TAB 2: ANALYTICS & PERFORMANCE ---
+# --- TAB 2: ANALYTICS ---
 with tab2:
     st.header(f"📊 {t['tab2']}")
-    
-    # Section A: Performance Graphs (Changes based on Language)
     st.subheader(t["perf_title"])
     if os.path.exists(t["graph_file"]):
         st.image(t["graph_file"], use_container_width=True)
-    else:
-        st.warning("Graphic file not found in repository.")
     
     st.divider()
-    
-    # Section B: Model Statistics Table
     st.subheader(t["csv_title"])
     st.dataframe(
         performance_df.style.background_gradient(cmap='YlGn', subset=['f1-score']), 
         use_container_width=True
     )
 
-# --- 5. FOOTER ---
+# --- FOOTER ---
 st.sidebar.markdown("---")
 st.sidebar.write("👤 **Developer:** Berkay")
 st.sidebar.caption("MIS Graduation Project - 2026")
