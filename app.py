@@ -1,50 +1,42 @@
-import os
-# --- STEP 1: FORCE LEGACY KERAS ---
-# This must be set BEFORE importing tensorflow to avoid input tensor conflicts
-os.environ["TF_USE_LEGACY_KERAS"] = "1"
-
 import streamlit as st
-import tensorflow as tf
-import tf_keras as keras  # Use the legacy loader for stability
-from PIL import Image
+import os
+
+# --- STEP 1: SET KERAS BACKEND ---
+# This ensures Keras 3 uses TensorFlow as its engine before any other imports
+os.environ["KERAS_BACKEND"] = "tensorflow"
+
+import keras  # Import standalone Keras 3
 import numpy as np
+from PIL import Image
 import json
 import pandas as pd
 from huggingface_hub import hf_hub_download
 
-# --- STEP 2: MIXED PRECISION POLICY ---
-# Matching your training environment for float16 weights
-from tensorflow.keras import mixed_precision
-try:
-    policy = mixed_precision.Policy('mixed_float16')
-    mixed_precision.set_global_policy(policy)
-except:
-    pass 
-
-# --- STEP 3: PAGE CONFIGURATION ---
+# --- STEP 2: PAGE CONFIGURATION ---
 st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_icon="🌿")
 
-# --- STEP 4: RESOURCE LOADING (CACHED) ---
+# --- STEP 3: RESOURCE LOADING (CACHED) ---
 @st.cache_resource
 def load_resources():
     """
-    Downloads the model from Hugging Face and loads local metadata.
+    Downloads the model from Hugging Face and loads local metadata using Keras 3.
     """
+    # Define Hugging Face Repository details
     REPO_ID = "berkay48/plant-leaf-detector" 
     FILENAME = "plant_disease_detector_best.keras"
     
-    # Download from Hugging Face
+    # Download the model file from HF Hub
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # CRITICAL FIX: Use 'keras' (tf_keras) instead of 'tf.keras' 
-    # and compile=False to bypass training-specific input errors
-    model = keras.models.load_model(model_path, compile=False)
+    # CRITICAL FIX: Use the modern Keras 3 loader
+    # safe_mode=False allows loading InceptionV3 with custom configurations
+    model = keras.saving.load_model(model_path, compile=False, safe_mode=False)
     
     # Load class indices
     with open('class_indices.json', 'r') as f:
         class_indices = json.load(f)
     
-    # Load care guides
+    # Load bilingual knowledge base
     with open('plant_care_guides.json', 'r', encoding='utf-8') as f:
         knowledge_base = json.load(f)
     
@@ -53,7 +45,7 @@ def load_resources():
     
     return model, class_indices, knowledge_base, performance_df
 
-# Execute loading
+# Execute resource loading with error handling
 try:
     model, class_indices, knowledge_base, performance_df = load_resources()
     labels = {v: k for k, v in class_indices.items()}
@@ -61,10 +53,12 @@ except Exception as e:
     st.error(f"Initialization Error: {e}")
     st.stop()
 
-# --- STEP 5: LANGUAGE SETTINGS ---
+# --- STEP 4: SIDEBAR & LANGUAGE SETTINGS ---
+st.sidebar.title("Settings / Ayarlar")
 language = st.sidebar.selectbox("Language Selection / Dil Seçimi", ["English", "Türkçe"])
 lang_code = "en" if language == "English" else "tr"
 
+# Dictionary for multi-language UI support
 t = {
     "tab1": "Diagnosis" if lang_code == "en" else "Teşhis",
     "tab2": "Model Performance" if lang_code == "en" else "Model Performansı",
@@ -83,10 +77,10 @@ t = {
     "graph_file": "model_graph_en.png" if lang_code == "en" else "model_graph_tr.png"
 }
 
-# --- STEP 6: APP TABS ---
+# --- STEP 5: APP TABS ---
 tab1, tab2 = st.tabs([f"🔍 {t['tab1']}", f"📊 {t['tab2']}"])
 
-# --- TAB 1: DIAGNOSIS ---
+# --- TAB 1: DIAGNOSIS & RECOMMENDATIONS ---
 with tab1:
     st.header(f"🌿 {t['header']}")
     uploaded_file = st.file_uploader(t["upload_msg"], type=['jpg', 'jpeg', 'png'])
@@ -96,16 +90,18 @@ with tab1:
         st.image(image, caption='User Upload', use_container_width=True)
         
         if st.button(t["btn_predict"]):
-            # Resize for InceptionV3
+            # Preprocessing for InceptionV3
             img = image.resize((299, 299))
             img_array = np.array(img) / 255.0
             img_array = np.expand_dims(img_array, axis=0)
             
             with st.spinner('Analyzing...' if lang_code == "en" else 'Analiz ediliyor...'):
+                # Prediction using modern Keras API
                 preds = model.predict(img_array)
                 confidence = np.max(preds)
                 predicted_label = labels[np.argmax(preds)]
 
+            # Confidence Threshold Logic
             if confidence < 0.75:
                 st.warning(t["confidence_err"])
                 st.info(f"System Confidence: {confidence:.2f}")
@@ -113,6 +109,7 @@ with tab1:
                 st.success(f"### Result: {predicted_label.replace('___', ' - ')}")
                 st.progress(float(confidence))
                 
+                # Knowledge Base Integration
                 info = knowledge_base.get(predicted_label, {}).get(lang_code)
                 if info:
                     with st.expander(f"💡 {t['expander_title']}", expanded=True):
@@ -121,24 +118,29 @@ with tab1:
                             st.error(f"💊 **{t['treatment']}:** {info['treatment']}")
                         else:
                             st.success(f"✨ **{t['maintenance']}:** {info['maintenance']}")
+                        
                         st.info(f"💧 **{t['irrigation']}:** {info['irrigation']}")
                         st.info(f"🧪 **{t['fertilizer']}:** {info['fertilizer']}")
 
-# --- TAB 2: ANALYTICS ---
+# --- TAB 2: ANALYTICS & PERFORMANCE ---
 with tab2:
     st.header(f"📊 {t['tab2']}")
+    
+    # Visualizing Training Curves
     st.subheader(t["perf_title"])
     if os.path.exists(t["graph_file"]):
         st.image(t["graph_file"], use_container_width=True)
     
     st.divider()
+    
+    # Detailed CSV Data Table
     st.subheader(t["csv_title"])
     st.dataframe(
         performance_df.style.background_gradient(cmap='YlGn', subset=['f1-score']), 
         use_container_width=True
     )
 
-# --- FOOTER ---
+# --- STEP 6: FOOTER ---
 st.sidebar.markdown("---")
 st.sidebar.write("👤 **Developer:** Berkay")
 st.sidebar.caption("MIS Graduation Project - 2026")
