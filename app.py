@@ -14,16 +14,17 @@ st.set_page_config(page_title="PlantAI - Decision Support", layout="wide", page_
 @st.cache_resource
 def load_resources():
     """
-    Downloads the model from Hugging Face and loads local metadata.
+    Downloads the .h5 model from Hugging Face and loads local metadata.
     """
     REPO_ID = "berkay48/plant-leaf-detector" 
-    FILENAME = "plant_disease_detector_best.keras"
+    # DEĞİŞİKLİK: Yeni oluşturduğun .h5 dosyasının adını buraya yazıyoruz
+    FILENAME = "plant_disease_detector_best.h5"
     
     # Download model from Hugging Face
     model_path = hf_hub_download(repo_id=REPO_ID, filename=FILENAME)
     
-    # CLEAN LOAD: Removed all legacy environment variables and complex loaders.
-    # compile=False: Skip loading training-specific optimizer/loss data.
+    # .h5 modelleri için en stabil yükleme yöntemi
+    # compile=False: 213MB'tan 90MB'a düşen modelde zaten eğitim verisi yok, bu yüzden zorunlu.
     model = tf.keras.models.load_model(model_path, compile=False)
     
     # Load class indices
@@ -57,7 +58,7 @@ t = {
     "header": "Plant Health Analysis" if lang_code == "en" else "Bitki Sağlığı Analizi",
     "upload_msg": "Upload a leaf photo" if lang_code == "en" else "Bir yaprak fotoğrafı yükleyin",
     "btn_predict": "Analyze Plant" if lang_code == "en" else "Bitkiyi Analiz Et",
-    "confidence_err": "⚠️ Image rejected. This does not look like a leaf." if lang_code == "en" else "⚠️ Görsel reddedildi. Bir yaprağa benzemiyor.",
+    "confidence_err": "⚠️ Image rejected. This does not look like a leaf from our dataset." if lang_code == "en" else "⚠️ Görsel reddedildi. Veri setimizdeki bir yaprağa benzemiyor.",
     "expander_title": "Detailed Care Guide" if lang_code == "en" else "Detaylı Bakım Rehberi",
     "status": "Status" if lang_code == "en" else "Durum",
     "treatment": "Treatment" if lang_code == "en" else "Tedavi",
